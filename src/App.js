@@ -1,6 +1,6 @@
 import './App.css';
 
-// test town17
+// staging mode 
 
 import ScrollToTop from './Components/ScrollToTop';
 import Intro from './Components/Intro';
