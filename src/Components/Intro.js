@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Assets/images/logo.svg'
+import Logo from '../Assets/images/logo.png'
 
 function Intro() {
   return (
