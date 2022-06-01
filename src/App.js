@@ -1,6 +1,6 @@
 import './App.css';
 
-// staging mode 
+// staging mode pushing
 
 import ScrollToTop from './Components/ScrollToTop';
 import Intro from './Components/Intro';
