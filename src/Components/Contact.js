@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-const API_PATH = 'http://localhost:3000/api/contact/index.php';
+const API_PATH = 'https://www.townscrapmetal.com/api/contact/index.php';
 
 export class Contact extends Component {
   constructor(props) {
@@ -16,35 +16,22 @@ export class Contact extends Component {
     }
   }
   
-  handleFormSubmit (e) {
+  handleFormSubmit = e => {
     e.preventDefault();
-    // axios({
-    //   method: 'post',
-    //   url: `${API_PATH}`,
-    //   headers: { 'content-type': 'application/json' },
-    //   data: this.state
-    // })
-    //   .then(result => {
-    //     this.setState({
-    //       mailSent: result.data.sent
-    //     })
-    //   })
-    //   .catch(error => this.setState({ error: error.message }));
-
-
-    axios.get("http://localhost:3000/api/contact/index.php")
-      .then(function (response) {
-        // handle success
-        console.log(response);
+    console.log(this.state)
+    axios({
+      method: 'post',
+      url: `${API_PATH}`,
+      headers: { 'content-type': 'application/json' },
+      data: this.state
+    })
+    .then(result => {
+      this.setState({
+        mailSent: result.data.sent
       })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
-    });
-  }
+    })
+    .catch(error => this.setState({ error: error.message }));
+  };
   
   handleFormChange (e) {
     this.setState({[e.target.name]:e.target.value})
